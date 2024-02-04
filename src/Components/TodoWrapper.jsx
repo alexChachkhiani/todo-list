@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TodoForm } from './TodoForm'
 import { Todo } from './Todo'
 import { v4 as uuidv4 } from 'uuid'
@@ -29,9 +29,18 @@ export const TodoWrapper = () => {
     const editTask = (task, id) => {
       setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditing: !todo.isEditing} : todo))
     }
+
+    const [time, setTime] = useState(new Date())
+
+    useEffect(() => {
+      setInterval(() => setTime(new Date()), 1000)
+    }, [])
   return (
     <div className="todo-wrapper">
-        <h1>Get Things Done!</h1>
+        <header>
+          <h1>Get Things Done!</h1>
+          <h1 className="current-time">{time.getHours() + ":" + time.getMinutes()}</h1>
+        </header>
         <TodoForm addTodo={addTodo}/>
         {todos.map((todo, index) => (
           todo.isEditing ? (

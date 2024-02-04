@@ -22,10 +22,20 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 h1 {
   color: #fff;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
+}
+
+.current-time {
+  color: #62929e;
 }
 
 .todo-wrapper {
