@@ -1,10 +1,11 @@
 import './App.css'
+import { TodoWrapper } from './Components/TodoWrapper'
 
 function App() {
   return (
-    <>
-      <h1>Todo List</h1>
-    </>
+    <div className="">
+      <TodoWrapper />
+    </div>
   )
 }
 
