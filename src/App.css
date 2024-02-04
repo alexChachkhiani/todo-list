@@ -12,7 +12,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .App {
@@ -69,6 +68,11 @@ h1 {
   padding: 0.75rem 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
+  max-width: 750px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .todo p {
@@ -93,6 +97,14 @@ h1 {
 .edit-icon,
 .delete-icon {
   cursor: pointer;
+
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+  opacity: 1
 }
 
 .edit-icon {
