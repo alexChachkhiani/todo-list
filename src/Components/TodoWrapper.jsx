@@ -35,16 +35,11 @@ export const TodoWrapper = () => {
     useEffect(() => {
       setInterval(() => setTime(new Date()), 1000)
     }, [])
-
-    let minutes = time.getMinutes();
-    if (minutes < 10) {
-      return "0" + minutes
-    }
   return (
     <div className="todo-wrapper">
         <header>
           <h1>Get Things Done!</h1>
-          <h1 className="current-time">{time.getHours()}:{minutes}</h1>
+          <h1 className="current-time">{time.toLocaleTimeString()}</h1>
         </header>
         <TodoForm addTodo={addTodo}/>
         {todos.map((todo, index) => (
