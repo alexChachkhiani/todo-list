@@ -125,3 +125,9 @@ h1 {
 .edit-icon {
   padding-left: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+  .todo-wrapper {
+    margin: 5rem 5rem 5rem 5rem;
+  }
+}
